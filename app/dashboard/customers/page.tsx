@@ -1,6 +1,13 @@
+import CustomersTable from "@/app/ui/customers/table"
 
-export default function CustomersPage() {
+export default async function CustomersPage({ searchParams }: {
+    searchParams?: {
+        query?: string;
+    };
+}) {
+    const query = searchParams?.query || '';
+
     return (
-        <p>Customers Page</p>
+        <CustomersTable query={query} />
     )
 }
